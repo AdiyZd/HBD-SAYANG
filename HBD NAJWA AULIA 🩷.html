@@ -84,6 +84,37 @@
       color: white;
     }
 
+    .music-control {
+      position: fixed;
+      z-index: 20;
+      right: 18px;
+      bottom: 18px;
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      padding: 0;
+      border: 1px solid var(--accent);
+      border-radius: 50%;
+      background: var(--card);
+      color: var(--accent);
+      box-shadow: 0 4px 16px rgb(41 37 33 / 16%);
+      cursor: pointer;
+      transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+    }
+
+    .music-control:hover {
+      transform: scale(1.06);
+      background: var(--accent);
+      color: white;
+    }
+
+    .music-control svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
     .section {
       padding: 55px 0 80px;
     }
@@ -225,6 +256,11 @@
 
 <body>
   <audio id="backgroundMusic" src="soundUltah.mp3" autoplay loop preload="auto"></audio>
+  <button class="music-control" id="musicControl" type="button" aria-label="Putar musik" aria-pressed="false">
+    <svg id="musicIcon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M8 5v14l11-7z" />
+    </svg>
+  </button>
 
   <header class="hero">
     <div class="container">
@@ -306,11 +342,34 @@
     const lightbox = document.getElementById("lightbox");
     const lightboxImage = document.getElementById("lightboxImage");
     const backgroundMusic = document.getElementById("backgroundMusic");
+    const musicControl = document.getElementById("musicControl");
+    const musicIcon = document.getElementById("musicIcon");
 
-    // Meminta pemutaran saat halaman siap; browser dapat memblokir autoplay bersuara.
-    backgroundMusic.play().catch(() => {
-      // Jika autoplay diblokir oleh browser, pemutaran otomatis tidak dapat dipaksakan.
+    function updateMusicControl() {
+      const isPlaying = !backgroundMusic.paused;
+      musicControl.setAttribute("aria-label", isPlaying ? "Jeda musik" : "Putar musik");
+      musicControl.setAttribute("aria-pressed", String(isPlaying));
+      musicIcon.innerHTML = isPlaying
+        ? '<path d="M6 5h4v14H6zm8 0h4v14h-4z" />'
+        : '<path d="M8 5v14l11-7z" />';
+    }
+
+    musicControl.addEventListener("click", async () => {
+      if (backgroundMusic.paused) {
+        try {
+          await backgroundMusic.play();
+        } catch (error) {
+          updateMusicControl();
+        }
+      } else {
+        backgroundMusic.pause();
+      }
+      updateMusicControl();
     });
+
+    backgroundMusic.addEventListener("play", updateMusicControl);
+    backgroundMusic.addEventListener("pause", updateMusicControl);
+    backgroundMusic.play().catch(updateMusicControl);
 
     document.querySelectorAll(".photo").forEach((photo) => {
       photo.addEventListener("click", () => {
