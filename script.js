@@ -135,9 +135,9 @@ reactionForm.addEventListener("submit", async (event) => {
   const result = await showAlert({
     icon: "success",
     title: "Kirim reaksimu? 💌",
-    text: "WhatsApp akan dibuka dengan pesan yang sudah disiapkan. Tekan Kirim lagi di WhatsApp untuk mengirimnya.",
+    text: "Membuka whatsapp untuk mengirim reaksi.",
     showCancelButton: true,
-    confirmButtonText: "Buka WhatsApp",
+    confirmButtonText: "Kirim",
     cancelButtonText: "Nanti dulu",
     reverseButtons: true
   });
