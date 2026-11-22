@@ -84,27 +84,6 @@
       color: white;
     }
 
-    .music-control {
-      position: fixed;
-      z-index: 20;
-      right: 18px;
-      bottom: 18px;
-      padding: 11px 16px;
-      border: 1px solid var(--accent);
-      border-radius: 999px;
-      background: var(--card);
-      color: var(--accent);
-      font: inherit;
-      font-size: 0.9rem;
-      box-shadow: 0 4px 16px rgb(41 37 33 / 12%);
-      cursor: pointer;
-    }
-
-    .music-control:hover {
-      background: var(--accent);
-      color: white;
-    }
-
     .section {
       padding: 55px 0 80px;
     }
@@ -245,10 +224,7 @@
 </head>
 
 <body>
-  <audio id="backgroundMusic" src="soundUltah.mp3" loop preload="auto"></audio>
-  <button class="music-control" id="musicControl" type="button" aria-pressed="false">
-    ▶ Putar musik
-  </button>
+  <audio id="backgroundMusic" src="soundUltah.mp3" autoplay loop preload="auto"></audio>
 
   <header class="hero">
     <div class="container">
@@ -330,33 +306,10 @@
     const lightbox = document.getElementById("lightbox");
     const lightboxImage = document.getElementById("lightboxImage");
     const backgroundMusic = document.getElementById("backgroundMusic");
-    const musicControl = document.getElementById("musicControl");
 
-    function updateMusicControl() {
-      const isPlaying = !backgroundMusic.paused;
-      musicControl.textContent = isPlaying ? "❚❚ Matikan musik" : "▶ Putar musik";
-      musicControl.setAttribute("aria-pressed", String(isPlaying));
-    }
-
-    musicControl.addEventListener("click", async () => {
-      if (backgroundMusic.paused) {
-        try {
-          await backgroundMusic.play();
-        } catch (error) {
-          musicControl.textContent = "Musik tidak dapat diputar";
-        }
-      } else {
-        backgroundMusic.pause();
-      }
-      updateMusicControl();
-    });
-
-    backgroundMusic.addEventListener("play", updateMusicControl);
-    backgroundMusic.addEventListener("pause", updateMusicControl);
-
-    // Coba putar otomatis; browser mungkin meminta interaksi pengguna terlebih dahulu.
+    // Meminta pemutaran saat halaman siap; browser dapat memblokir autoplay bersuara.
     backgroundMusic.play().catch(() => {
-      updateMusicControl();
+      // Jika autoplay diblokir oleh browser, pemutaran otomatis tidak dapat dipaksakan.
     });
 
     document.querySelectorAll(".photo").forEach((photo) => {
