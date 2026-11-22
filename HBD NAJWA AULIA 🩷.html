@@ -191,10 +191,35 @@
     }
 
     footer {
-      padding: 25px 0 40px;
-      color: var(--muted);
-      font-size: 0.85rem;
+      padding: 28px 20px 34px;
       text-align: center;
+    }
+
+    .footer-inner {
+      width: min(100%, 1000px);
+      margin: 0 auto;
+      padding-top: 22px;
+      border-top: 1px solid rgb(129 122 115 / 22%);
+    }
+
+    .footer-note {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+      letter-spacing: 0.02em;
+    }
+
+    .footer-note .heart {
+      display: inline-block;
+      margin: 0 3px;
+      color: var(--accent);
+    }
+
+    .footer-signature {
+      margin: 5px 0 0;
+      color: var(--text);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1rem;
     }
 
     .lightbox {
@@ -249,6 +274,10 @@
 
       .message {
         padding: 26px 20px;
+      }
+
+      footer {
+        padding-bottom: 28px;
       }
     }
   </style>
@@ -330,7 +359,10 @@
   </main>
 
   <footer>
-    Dibuat dengan penuh cinta adi.
+    <div class="footer-inner">
+      <p class="footer-note">Dibuat dengan <span class="heart" aria-label="cinta">♥</span> untuk Najwa</p>
+      <p class="footer-signature">— adi —</p>
+    </div>
   </footer>
 
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto kenangan">
