@@ -1,6 +1,5 @@
-// Masukkan nomor WhatsApp tujuan dengan kode negara, tanpa tanda +, spasi, atau strip.
-// Contoh format Indonesia: 6281234567890
-const WHATSAPP_NUMBER = "GANTI_DENGAN_NOMOR_WA";
+// Contoh: 6281234567890
+const WHATSAPP_NUMBER = "6288216796297";
 
 const lightbox = document.getElementById("lightbox");
 const lightboxImage = document.getElementById("lightboxImage");
@@ -82,7 +81,7 @@ reactionForm.addEventListener("submit", (event) => {
     return;
   }
 
-  const lines = ["Hai Adi! Aku sudah melihat halaman ulang tahunnya 💗"];
+  const lines = ["Hai Sayang! Aku sudah melihat halaman ulang tahunnya 💗"];
   if (selectedReaction) lines.push(`Reaksiku: ${selectedReaction}`);
   if (reactionMessage.value.trim()) lines.push(`Pesanku: ${reactionMessage.value.trim()}`);
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join("\n\n"))}`;
