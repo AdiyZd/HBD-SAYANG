@@ -1,0 +1,90 @@
+/* Decorative photo frames and a high-contrast lightbox close button. */
+.photo {
+  overflow: visible;
+  padding: 10px;
+  border: 2px solid #f3b4c7;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 8px 22px rgb(111 56 77 / 14%), inset 0 0 0 3px #fff;
+}
+
+.photo img {
+  overflow: hidden;
+  border: 1px solid #f8d8e2;
+  border-radius: 9px;
+}
+
+.photo::before {
+  position: absolute;
+  z-index: 2;
+  top: -15px;
+  left: 7px;
+  color: #c2185b;
+  content: "✿　❀";
+  font-size: 23px;
+  line-height: 1;
+  text-shadow: 0 1px 0 #fff, 1px 2px 3px rgb(194 24 91 / 22%);
+  pointer-events: none;
+}
+
+.photo::after {
+  inset: auto 11px 11px;
+  min-height: 28%;
+  border-radius: 0 0 8px 8px;
+}
+
+.photo:hover,
+.photo:focus-visible {
+  border-color: #d94373;
+  box-shadow: 0 14px 30px rgb(194 24 91 / 24%), 0 0 0 3px rgb(255 255 255 / 90%);
+}
+
+.photo-swal-popup {
+  position: relative;
+  border: 8px solid #fff !important;
+  border-radius: 20px !important;
+  box-shadow: 0 0 0 2px #f0a3bc, 0 18px 60px rgb(0 0 0 / 35%) !important;
+}
+
+.photo-swal-popup::before {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  color: #c2185b;
+  content: "🌸　✿　🌸";
+  font-size: 22px;
+  line-height: 1;
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+
+.photo-swal-popup .swal2-close {
+  z-index: 2;
+  width: 42px !important;
+  height: 42px !important;
+  border: 2px solid #fff !important;
+  border-radius: 50% !important;
+  background: #b5124b !important;
+  color: #fff !important;
+  font-size: 32px !important;
+  font-weight: 700 !important;
+  line-height: 38px !important;
+  box-shadow: 0 2px 10px rgb(0 0 0 / 35%) !important;
+  opacity: 1 !important;
+}
+
+.photo-swal-popup .swal2-close:hover {
+  background: #8f0d3a !important;
+  transform: scale(1.08);
+}
+
+.photo-swal-popup .swal2-close:focus-visible {
+  outline: 3px solid #f4a8c0 !important;
+  outline-offset: 3px;
+}
+
+@media (max-width: 650px) {
+  .photo { padding: 7px; border-radius: 16px; }
+  .photo::before { top: -12px; font-size: 19px; }
+  .photo::after { inset: auto 8px 8px; }
+}
