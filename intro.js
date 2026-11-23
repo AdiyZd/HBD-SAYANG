@@ -1,12 +1,23 @@
 const intro = document.getElementById("letterIntro");
 const openButton = document.getElementById("openLetterButton");
 const backgroundMusic = document.getElementById("backgroundMusic");
+let introStarted = false;
 
 function openLetter() {
-  if (!intro || intro.classList.contains("is-opening")) return;
-  if (openButton) openButton.disabled = true;
+  if (!intro || introStarted) return;
+  introStarted = true;
   intro.classList.add("is-opening");
-  if (backgroundMusic) backgroundMusic.play().catch(() => {});
+
+  // Playback is initiated directly from the user's tap for Android browser policy.
+  if (backgroundMusic) {
+    const playResult = backgroundMusic.play();
+    if (playResult && typeof playResult.catch === "function") {
+      playResult.catch(() => {
+        // If playback is blocked, the persistent music button remains available.
+      });
+    }
+  }
+
   window.setTimeout(() => {
     intro.classList.add("is-hidden");
     document.body.classList.remove("intro-locked");
@@ -16,8 +27,4 @@ function openLetter() {
 
 if (openButton) {
   openButton.addEventListener("click", openLetter);
-  openButton.addEventListener("touchend", (event) => {
-    event.preventDefault();
-    openLetter();
-  }, { passive: false });
 }
