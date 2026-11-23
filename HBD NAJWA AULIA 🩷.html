@@ -6,30 +6,24 @@
   <meta name="theme-color" content="#fff7fa" />
   <title>Selamat Ulang Tahun, Sayangku Najwa Aulia</title>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="photo-decorations.css" />
+  <link rel="stylesheet" href="photo-decorations.css?v=3" />
+  <link rel="stylesheet" href="letter-click-fix.css?v=3" />
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
-  <script src="script.js" defer></script>
-  <script src="intro.js?v=2" defer></script>
+  <script src="script.js?v=3" defer></script>
+  <script src="intro.js?v=3" defer></script>
 </head>
-
 <body class="intro-locked">
   <section class="letter-intro" id="letterIntro" aria-label="Surat ucapan ulang tahun">
     <div class="letter-scene">
       <div class="envelope" aria-hidden="true">
         <div class="envelope-back"></div>
-        <article class="letter-paper">
-          <span class="letter-paper-flower" aria-hidden="true">🌸</span>
-          <p>Untuk Najwa Aulia</p>
-          <span class="letter-paper-heart" aria-hidden="true">♥</span>
-        </article>
+        <article class="letter-paper"><span class="letter-paper-flower">🌸</span><p>Untuk Najwa Aulia</p><span class="letter-paper-heart">♥</span></article>
         <div class="envelope-pocket"></div>
         <div class="envelope-flap"></div>
-        <span class="envelope-seal" aria-hidden="true">♥</span>
+        <span class="envelope-seal">♥</span>
       </div>
       <p class="intro-caption">Ada surat kecil untukmu…</p>
-      <button class="open-letter-button" id="openLetterButton" type="button" aria-controls="letterIntro">
-        Buka surat ucapan <span aria-hidden="true">💌</span>
-      </button>
+      <button class="open-letter-button" id="openLetterButton" type="button" aria-controls="letterIntro">Buka surat ucapan <span aria-hidden="true">💌</span></button>
       <p class="intro-hint">Tekan untuk membuka kejutan</p>
     </div>
   </section>
@@ -48,80 +42,27 @@
   </div>
 
   <audio id="backgroundMusic" src="soundUltah.mp3" loop preload="metadata"></audio>
-  <button class="music-control" id="musicControl" type="button" aria-label="Putar musik" aria-pressed="false">
-    <svg id="musicIcon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
-  </button>
+  <button class="music-control" id="musicControl" type="button" aria-label="Putar musik" aria-pressed="false"><svg id="musicIcon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg></button>
 
-  <header class="hero">
-    <div class="container">
-      <div class="eyebrow">Hari spesial untuk orang spesial</div>
-      <h1>Happy<br />Birthday, Sayangku Najwa Aulia</h1>
-      <p>
-        Hari ini sepenuhnya tentang kamu. Tentang betapa beruntungnya aku punya kamu di hidupku,
-        dan tentang segala tawa, kehangatan, serta rasa tenang yang selalu kamu hadirkan setiap harinya.
-        Terima kasih sudah menjadi rumah paling nyaman buatku pulang. <strong>Semoga di usiamu yang baru ini</strong>,
-        menjadi bab terbaikmu—tahun yang membawamu pada jutaan alasan untuk tersenyum, kebahagiaan tanpa jeda,
-        dan cerita-cerita manis yang akan terus kita rangkai berdua🫂.
-      </p>
-      <a class="button" href="#kenangan">Lihat kenangan mu! ↓</a>
+  <header class="hero"><div class="container"><div class="eyebrow">Hari spesial untuk orang spesial</div><h1>Happy<br />Birthday, Sayangku Najwa Aulia</h1><p>Hari ini sepenuhnya tentang kamu. Tentang betapa beruntungnya aku punya kamu di hidupku, dan tentang segala tawa, kehangatan, serta rasa tenang yang selalu kamu hadirkan setiap harinya. Terima kasih sudah menjadi rumah paling nyaman buatku pulang. <strong>Semoga di usiamu yang baru ini</strong>, menjadi bab terbaikmu—tahun yang membawamu pada jutaan alasan untuk tersenyum, kebahagiaan tanpa jeda, dan cerita-cerita manis yang akan terus kita rangkai berdua🫂.</p><a class="button" href="#kenangan">Lihat kenangan mu! ↓</a></div></header>
+
+  <main><section class="section container" id="kenangan"><div class="section-heading reveal"><div class="eyebrow">Sedikit cerita</div><h2>Momen yang kusimpan</h2><p>Sepuluh foto, banyak sekali alasan untuk tersenyum.</p></div>
+    <div class="gallery">
+      <button class="photo reveal" aria-label="Buka foto kenangan 1"><img src="foto/foto1.jpg" alt="Kenangan kita 1" loading="lazy" decoding="async" /></button>
+      <button class="photo reveal" aria-label="Buka foto kenangan 2"><img src="foto/foto2.jpg" alt="Kenangan kita 2" loading="lazy" decoding="async" /></button>
+      <button class="photo reveal" aria-label="Buka foto kenangan 3"><img src="foto/foto3.jpg" alt="Kenangan kita 3" loading="lazy" decoding="async" /></button>
+      <button class="photo reveal" aria-label="Buka foto kenangan 4"><img src="foto/foto4.jpg" alt="Kenangan kita 4" loading="lazy" decoding="async" /></button>
+      <button class="photo reveal" aria-label="Buka foto kenangan 5"><img src="foto/foto5.jpg" alt="Kenangan kita 5" loading="lazy" decoding="async" /></button>
+      <button class="photo reveal" aria-label="Buka foto kenangan 6"><img src="foto/foto6.jpg" alt="Kenangan kita 6" loading="lazy" decoding="async" /></button>
+      <button class="photo reveal" aria-label="Buka foto kenangan 7"><img src="foto/foto7.jpg" alt="Kenangan kita 7" loading="lazy" decoding="async" /></button>
+      <button class="photo reveal" aria-label="Buka foto kenangan 8"><img src="foto/foto8.jpg" alt="Kenangan kita 8" loading="lazy" decoding="async" /></button>
+      <button class="photo reveal" aria-label="Buka foto kenangan 9"><img src="foto/foto9.jpg" alt="Kenangan kita 9" loading="lazy" decoding="async" /></button>
+      <button class="photo reveal" aria-label="Buka foto kenangan 10"><img src="foto/foto101.jpg" alt="Kenangan kita 10" loading="lazy" decoding="async" /></button>
     </div>
-  </header>
-
-  <main>
-    <section class="section container" id="kenangan">
-      <div class="section-heading reveal">
-        <div class="eyebrow">Sedikit cerita</div>
-        <h2>Momen yang kusimpan</h2>
-        <p>Sepuluh foto, banyak sekali alasan untuk tersenyum.</p>
-      </div>
-
-      <div class="gallery">
-        <button class="photo reveal" aria-label="Buka foto kenangan 1"><img src="foto/foto1.jpg" alt="Kenangan kita 1" loading="lazy" decoding="async" /></button>
-        <button class="photo reveal" aria-label="Buka foto kenangan 2"><img src="foto/foto2.jpg" alt="Kenangan kita 2" loading="lazy" decoding="async" /></button>
-        <button class="photo reveal" aria-label="Buka foto kenangan 3"><img src="foto/foto3.jpg" alt="Kenangan kita 3" loading="lazy" decoding="async" /></button>
-        <button class="photo reveal" aria-label="Buka foto kenangan 4"><img src="foto/foto4.jpg" alt="Kenangan kita 4" loading="lazy" decoding="async" /></button>
-        <button class="photo reveal" aria-label="Buka foto kenangan 5"><img src="foto/foto5.jpg" alt="Kenangan kita 5" loading="lazy" decoding="async" /></button>
-        <button class="photo reveal" aria-label="Buka foto kenangan 6"><img src="foto/foto6.jpg" alt="Kenangan kita 6" loading="lazy" decoding="async" /></button>
-        <button class="photo reveal" aria-label="Buka foto kenangan 7"><img src="foto/foto7.jpg" alt="Kenangan kita 7" loading="lazy" decoding="async" /></button>
-        <button class="photo reveal" aria-label="Buka foto kenangan 8"><img src="foto/foto8.jpg" alt="Kenangan kita 8" loading="lazy" decoding="async" /></button>
-        <button class="photo reveal" aria-label="Buka foto kenangan 9"><img src="foto/foto9.jpg" alt="Kenangan kita 9" loading="lazy" decoding="async" /></button>
-        <button class="photo reveal" aria-label="Buka foto kenangan 10"><img src="foto/foto101.jpg" alt="Kenangan kita 10" loading="lazy" decoding="async" /></button>
-      </div>
-      <p class="gallery-hint"><span>♡</span> Sentuh foto untuk melihat lebih dekat</p>
-
-      <article class="message reveal">
-        <h2>Untuk kamu najwa 🤍</h2>
-        <p>
-          Semoga satu per satu mimpi yang sedang kamu perjuangkan perlahan menemukan
-          jalannya menjadi nyata. Apa pun langkahmu ke depan, aku akan selalu ada di
-          sampingmu untuk merayakan dan mendukungmu. Sekali lagi, selamat bertambah usia, cintaku🩷.
-        </p>
-      </article>
-
-      <section class="response-card reveal" aria-labelledby="responseTitle">
-        <div class="eyebrow">Aku ingin tahu</div>
-        <h2 id="responseTitle">Gimana sayang bagus ga? 💌</h2>
-        <p class="response-intro">Pilih reaksi atau tulis pesan kecil. Pesanmu akan dikirim melalui WhatsApp.</p>
-        <form id="reactionForm">
-          <div class="reaction-options" role="group" aria-label="Pilih reaksi">
-            <button class="reaction-option" type="button" data-reaction="Terharu 🥹" aria-pressed="false">🥹 <span>Terharu</span></button>
-            <button class="reaction-option" type="button" data-reaction="Aku suka 💗" aria-pressed="false">💗 <span>Suka banget</span></button>
-            <button class="reaction-option" type="button" data-reaction="Makasih sayang 🎂" aria-pressed="false">🎂 <span>Makasih</span></button>
-          </div>
-          <label class="visually-hidden" for="reactionMessage">Pesan untuk Adi (opsional)</label>
-          <textarea id="reactionMessage" rows="3" maxlength="500" placeholder="Tulis pesan untuk Adi (opsional)..."></textarea>
-          <button class="response-submit" type="submit">Kirim lewat WhatsApp <span aria-hidden="true">↗</span></button>
-          <p class="response-status" id="responseStatus" aria-live="polite"></p>
-        </form>
-      </section>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-inner">
-      <p class="footer-note">Dibuat dengan <span class="heart" aria-label="cinta">♥</span> untuk Najwa</p>
-      <p class="footer-signature">— adi —</p>
-    </div>
-  </footer>
+    <p class="gallery-hint"><span>♡</span> Sentuh foto untuk melihat lebih dekat</p>
+    <article class="message reveal"><h2>Untuk kamu najwa 🤍</h2><p>Semoga satu per satu mimpi yang sedang kamu perjuangkan perlahan menemukan jalannya menjadi nyata. Apa pun langkahmu ke depan, aku akan selalu ada di sampingmu untuk merayakan dan mendukungmu. Sekali lagi, selamat bertambah usia, cintaku🩷.</p></article>
+    <section class="response-card reveal" aria-labelledby="responseTitle"><div class="eyebrow">Aku ingin tahu</div><h2 id="responseTitle">Gimana sayang bagus ga? 💌</h2><p class="response-intro">Pilih reaksi atau tulis pesan kecil. Pesanmu akan dikirim melalui WhatsApp.</p><form id="reactionForm"><div class="reaction-options" role="group" aria-label="Pilih reaksi"><button class="reaction-option" type="button" data-reaction="Terharu 🥹" aria-pressed="false">🥹 <span>Terharu</span></button><button class="reaction-option" type="button" data-reaction="Aku suka 💗" aria-pressed="false">💗 <span>Suka banget</span></button><button class="reaction-option" type="button" data-reaction="Makasih sayang 🎂" aria-pressed="false">🎂 <span>Makasih</span></button></div><label class="visually-hidden" for="reactionMessage">Pesan untuk Adi (opsional)</label><textarea id="reactionMessage" rows="3" maxlength="500" placeholder="Tulis pesan untuk Adi (opsional)..."></textarea><button class="response-submit" type="submit">Kirim lewat WhatsApp <span aria-hidden="true">↗</span></button><p class="response-status" id="responseStatus" aria-live="polite"></p></form></section>
+  </section></main>
+  <footer><div class="footer-inner"><p class="footer-note">Dibuat dengan <span class="heart" aria-label="cinta">♥</span> untuk Najwa</p><p class="footer-signature">— adi —</p></div></footer>
 </body>
 </html>
