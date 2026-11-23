@@ -9,9 +9,31 @@
   <link rel="stylesheet" href="photo-decorations.css" />
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
   <script src="script.js" defer></script>
+  <script src="intro.js" defer></script>
 </head>
 
-<body>
+<body class="intro-locked">
+  <section class="letter-intro" id="letterIntro" aria-label="Surat ucapan ulang tahun">
+    <div class="letter-scene">
+      <div class="envelope" aria-hidden="true">
+        <div class="envelope-back"></div>
+        <article class="letter-paper">
+          <span class="letter-paper-flower" aria-hidden="true">🌸</span>
+          <p>Untuk Najwa Aulia</p>
+          <span class="letter-paper-heart" aria-hidden="true">♥</span>
+        </article>
+        <div class="envelope-pocket"></div>
+        <div class="envelope-flap"></div>
+        <span class="envelope-seal" aria-hidden="true">♥</span>
+      </div>
+      <p class="intro-caption">Ada surat kecil untukmu…</p>
+      <button class="open-letter-button" id="openLetterButton" type="button" aria-controls="letterIntro">
+        Buka surat ucapan <span aria-hidden="true">💌</span>
+      </button>
+      <p class="intro-hint">Tekan untuk membuka kejutan</p>
+    </div>
+  </section>
+
   <div class="floating-hearts" aria-hidden="true">
     <span style="--left: 5%; --size: 18px; --duration: 32s; --delay: -8s; --drift: 35px; --heart-color: #e9a1b7; --heart-opacity: .38">♥</span>
     <span style="--left: 14%; --size: 26px; --duration: 36s; --delay: -15s; --drift: -25px; --heart-color: #f0bfd0; --heart-opacity: .42">♡</span>
@@ -25,7 +47,7 @@
     <span style="--left: 97%; --size: 14px; --duration: 37s; --delay: -2s; --drift: -20px; --heart-color: #e9a1b7; --heart-opacity: .35">♡</span>
   </div>
 
-  <audio id="backgroundMusic" src="soundUltah.mp3" autoplay loop preload="metadata"></audio>
+  <audio id="backgroundMusic" src="soundUltah.mp3" loop preload="metadata"></audio>
   <button class="music-control" id="musicControl" type="button" aria-label="Putar musik" aria-pressed="false">
     <svg id="musicIcon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
   </button>
@@ -63,7 +85,7 @@
         <button class="photo reveal" aria-label="Buka foto kenangan 7"><img src="foto/foto7.jpg" alt="Kenangan kita 7" loading="lazy" decoding="async" /></button>
         <button class="photo reveal" aria-label="Buka foto kenangan 8"><img src="foto/foto8.jpg" alt="Kenangan kita 8" loading="lazy" decoding="async" /></button>
         <button class="photo reveal" aria-label="Buka foto kenangan 9"><img src="foto/foto9.jpg" alt="Kenangan kita 9" loading="lazy" decoding="async" /></button>
-        <button class="photo reveal" aria-label="Buka foto kenangan 10"><img src="foto/foto101.jpg" alt="Kenangan kita 10" loading="lazy" decoding="async" /></button>
+        <button class="photo reveal" aria-label="Buka foto kenangan 10"><img src="foto/foto10.jpg" alt="Kenangan kita 10" loading="lazy" decoding="async" /></button>
       </div>
       <p class="gallery-hint"><span>♡</span> Sentuh foto untuk melihat lebih dekat</p>
 
