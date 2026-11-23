@@ -1,0 +1,14 @@
+/* Keep decorative hearts visible above the intro and the birthday page. */
+.floating-hearts {
+  z-index: 1001;
+}
+
+.floating-hearts span {
+  opacity: 0;
+  filter: drop-shadow(0 3px 10px rgb(216 111 145 / 18%));
+}
+
+.letter-intro.is-hidden ~ .floating-hearts,
+body:not(.intro-locked) .floating-hearts {
+  z-index: 12;
+}
