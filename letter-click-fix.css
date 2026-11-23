@@ -1,0 +1,14 @@
+
+/* Ensure the intro button always receives pointer and keyboard input. */
+.letter-intro,
+.letter-scene,
+.open-letter-button {
+  pointer-events: auto;
+}
+
+.open-letter-button {
+  position: relative;
+  z-index: 10;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
