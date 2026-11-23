@@ -5,47 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#fff7fa" />
   <title>Selamat Ulang Tahun, Sayangku Najwa Aulia</title>
-  <link rel="stylesheet" href="styles.css?v=12" />
-  <link rel="stylesheet" href="photo-decorations.css?v=12" />
-  <link rel="stylesheet" href="intro-motion.css?v=12" />
-  <link rel="stylesheet" href="letter-text-fix.css?v=12" />
-  <link rel="stylesheet" href="love-decoration.css?v=12" />
+  <link rel="stylesheet" href="styles.css?v=13" />
+  <link rel="stylesheet" href="photo-decorations.css?v=13" />
+  <link rel="stylesheet" href="intro-motion.css?v=13" />
+  <link rel="stylesheet" href="letter-text-fix.css?v=13" />
+  <link rel="stylesheet" href="love-decoration.css?v=13" />
+  <link rel="stylesheet" href="envelope-design.css?v=13" />
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
-  <script src="script.js?v=12" defer></script>
+  <script src="script.js?v=13" defer></script>
 </head>
 <body class="intro-locked">
   <section class="letter-intro" id="letterIntro" aria-label="Surat ucapan ulang tahun">
     <div class="letter-scene">
-      <div class="envelope" aria-hidden="true">
-        <div class="envelope-back"></div>
-        <article class="letter-paper"><span class="letter-paper-flower">🌸</span><p>Untuk Najwa Aulia</p><span class="letter-paper-heart">♥</span></article>
-        <div class="envelope-pocket"></div>
-        <div class="envelope-flap"></div>
-        <span class="envelope-seal">♥</span>
-      </div>
+      <div class="envelope" aria-hidden="true"><div class="envelope-back"></div><article class="letter-paper"><span class="letter-paper-flower">🌸</span><p>Untuk Najwa Aulia</p><span class="letter-paper-heart">♥</span></article><div class="envelope-pocket"></div><div class="envelope-flap"></div><span class="envelope-seal">♥</span></div>
       <p class="intro-caption">Ada surat kecil untukmu…</p>
       <button class="open-letter-button" id="openLetterButton" type="button">Buka surat ucapan <span aria-hidden="true">💌</span></button>
     </div>
   </section>
-
   <div class="floating-hearts" aria-hidden="true">
-    <span style="--left:5%;--size:18px;--duration:32s;--delay:-8s;--drift:35px;--heart-color:#e9a1b7;--heart-opacity:.38">♥</span>
-    <span style="--left:14%;--size:26px;--duration:36s;--delay:-15s;--drift:-25px;--heart-color:#f0bfd0;--heart-opacity:.42">♡</span>
-    <span style="--left:24%;--size:15px;--duration:34s;--delay:-3s;--drift:28px;--heart-color:#d86f91;--heart-opacity:.25">♥</span>
-    <span style="--left:35%;--size:22px;--duration:38s;--delay:-12s;--drift:-40px;--heart-color:#e9a1b7;--heart-opacity:.34">♡</span>
-    <span style="--left:47%;--size:17px;--duration:33s;--delay:-6s;--drift:32px;--heart-color:#f0bfd0;--heart-opacity:.4">♥</span>
-    <span style="--left:58%;--size:25px;--duration:37s;--delay:-17s;--drift:-30px;--heart-color:#d86f91;--heart-opacity:.22">♡</span>
-    <span style="--left:69%;--size:16px;--duration:35s;--delay:-10s;--drift:42px;--heart-color:#e9a1b7;--heart-opacity:.36">♥</span>
-    <span style="--left:79%;--size:23px;--duration:39s;--delay:-4s;--drift:-34px;--heart-color:#f0bfd0;--heart-opacity:.4">♡</span>
-    <span style="--left:90%;--size:18px;--duration:34s;--delay:-13s;--drift:25px;--heart-color:#d86f91;--heart-opacity:.24">♥</span>
-    <span style="--left:97%;--size:14px;--duration:37s;--delay:-2s;--drift:-20px;--heart-color:#e9a1b7;--heart-opacity:.35">♡</span>
+    <span style="--left:5%;--size:18px;--duration:32s;--delay:-8s;--drift:35px;--heart-color:#e9a1b7;--heart-opacity:.38">♥</span><span style="--left:14%;--size:26px;--duration:36s;--delay:-15s;--drift:-25px;--heart-color:#f0bfd0;--heart-opacity:.42">♡</span><span style="--left:24%;--size:15px;--duration:34s;--delay:-3s;--drift:28px;--heart-color:#d86f91;--heart-opacity:.25">♥</span><span style="--left:35%;--size:22px;--duration:38s;--delay:-12s;--drift:-40px;--heart-color:#e9a1b7;--heart-opacity:.34">♡</span><span style="--left:47%;--size:17px;--duration:33s;--delay:-6s;--drift:32px;--heart-color:#f0bfd0;--heart-opacity:.4">♥</span><span style="--left:58%;--size:25px;--duration:37s;--delay:-17s;--drift:-30px;--heart-color:#d86f91;--heart-opacity:.22">♡</span><span style="--left:69%;--size:16px;--duration:35s;--delay:-10s;--drift:42px;--heart-color:#e9a1b7;--heart-opacity:.36">♥</span><span style="--left:79%;--size:23px;--duration:39s;--delay:-4s;--drift:-34px;--heart-color:#f0bfd0;--heart-opacity:.4">♡</span><span style="--left:90%;--size:18px;--duration:34s;--delay:-13s;--drift:25px;--heart-color:#d86f91;--heart-opacity:.24">♥</span><span style="--left:97%;--size:14px;--duration:37s;--delay:-2s;--drift:-20px;--heart-color:#e9a1b7;--heart-opacity:.35">♡</span>
   </div>
-
   <audio id="backgroundMusic" src="soundUltah.mp3" loop preload="metadata"></audio>
   <button class="music-control" id="musicControl" type="button" aria-label="Putar musik" aria-pressed="false"><svg id="musicIcon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg></button>
-
   <header class="hero"><div class="container"><div class="eyebrow">Hari spesial untuk orang spesial</div><h1>Happy<br />Birthday, Sayangku Najwa Aulia</h1><p>Hari ini sepenuhnya tentang kamu. Tentang betapa beruntungnya aku punya kamu di hidupku, dan tentang segala tawa, kehangatan, serta rasa tenang yang selalu kamu hadirkan setiap harinya. Terima kasih sudah menjadi rumah paling nyaman buatku pulang. <strong>Semoga di usiamu yang baru ini</strong>, menjadi bab terbaikmu—tahun yang membawamu pada jutaan alasan untuk tersenyum, kebahagiaan tanpa jeda, dan cerita-cerita manis yang akan terus kita rangkai berdua🫂.</p><a class="button" href="#kenangan">Lihat kenangan mu! ↓</a></div></header>
-
   <main><section class="section container" id="kenangan">
     <div class="section-heading reveal"><div class="eyebrow">Sedikit cerita</div><h2>Momen yang kusimpan</h2><p>Sepuluh foto, banyak sekali alasan untuk tersenyum.</p></div>
     <div class="gallery">
