@@ -1,63 +1,71 @@
-/* Reveal the paper above the envelope before the envelope itself fades. */
+/* Final envelope stage animation: paper remains inside until flap opens. */
+.letter-intro { transition: opacity 420ms ease, visibility 420ms ease; }
+.envelope { transform-origin: 50% 70%; }
 .letter-paper {
-  position: absolute;
-  z-index: 1;
-  backface-visibility: hidden;
+  z-index: 3;
+  transform: translate3d(0, 7%, 0) scale(.96);
+  transition: transform 1050ms cubic-bezier(.16, 1, .3, 1) 420ms,
+              opacity 420ms ease 1250ms;
+  will-change: transform, opacity;
 }
+.envelope-flap { z-index: 4; transform-origin: top center; transition: transform 720ms cubic-bezier(.22, 1, .36, 1); }
+.envelope-pocket { z-index: 2; }
+.envelope-back { z-index: 1; }
 
 .letter-intro.is-opening .envelope-flap {
   z-index: 0;
   transform: rotateX(180deg);
-  transition: transform 620ms cubic-bezier(.22, 1, .36, 1), z-index 0s;
-}
-
-.letter-intro.is-opening .envelope-pocket {
-  z-index: 2;
 }
 
 .letter-intro.is-opening .letter-paper {
   z-index: 5;
-  animation: letter-rise-and-fade 1450ms cubic-bezier(.2, .8, .2, 1) 180ms both;
-  transition: box-shadow 500ms ease;
+  transform: translate3d(0, -60%, 0) scale(1.015);
+  opacity: 1;
   box-shadow: 0 18px 40px rgb(120 40 70 / 24%);
 }
 
-.letter-intro.is-opening .letter-paper-flower,
-.letter-intro.is-opening .letter-paper p,
-.letter-intro.is-opening .letter-paper-heart {
-  position: relative;
-  z-index: 1;
+.letter-intro.is-opening .envelope-seal {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(.5);
+  transition: opacity 220ms ease 120ms, transform 220ms ease 120ms;
 }
 
-/* Start the envelope exit only after the raised letter has faded away. */
+.letter-intro.is-opening .letter-paper {
+  animation: paper-fade-after-rise 540ms ease 1450ms forwards;
+}
+
 .letter-intro.is-opening .envelope {
-  animation: envelope-float-away 520ms cubic-bezier(.22, 1, .36, 1) 1510ms both;
+  animation: envelope-fade-away 480ms ease 1780ms forwards;
 }
 
 .letter-intro.is-opening .letter-scene {
-  animation: letter-scene-exit 500ms cubic-bezier(.22, 1, .36, 1) 1520ms both;
+  animation: scene-fade-away 380ms ease 1920ms forwards;
 }
 
-@keyframes letter-rise-and-fade {
-  0%, 15% { transform: translate3d(0, 7%, 0) scale(.96); opacity: 1; }
-  66% { transform: translate3d(0, -62%, 0) scale(1.02); opacity: 1; }
-  80% { transform: translate3d(0, -62%, 0) scale(1.02); opacity: 1; }
-  100% { transform: translate3d(0, -70%, 0) scale(1.02); opacity: 0; }
+.letter-intro.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+
+@keyframes paper-fade-after-rise {
+  0% { opacity: 1; }
+  100% { opacity: 0; transform: translate3d(0, -68%, 0) scale(.98); }
+}
+
+@keyframes envelope-fade-away {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(.94) translateY(-10px); }
+}
+
+@keyframes scene-fade-away {
+  to { opacity: 0; }
 }
 
 @media (max-width: 650px) {
-  .letter-intro.is-opening .letter-paper {
-    animation-name: letter-rise-and-fade-mobile;
+  .letter-intro.is-opening .letter-paper { transform: translate3d(0, -52%, 0) scale(1.01); }
+  @keyframes paper-fade-after-rise {
+    0% { opacity: 1; }
+    100% { opacity: 0; transform: translate3d(0, -60%, 0) scale(.98); }
   }
 }
 
-@keyframes letter-rise-and-fade-mobile {
-  0%, 15% { transform: translate3d(0, 7%, 0) scale(.96); opacity: 1; }
-  66% { transform: translate3d(0, -54%, 0) scale(1.01); opacity: 1; }
-  80% { transform: translate3d(0, -54%, 0) scale(1.01); opacity: 1; }
-  100% { transform: translate3d(0, -62%, 0) scale(1.01); opacity: 0; }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .letter-intro.is-opening .letter-paper { animation-duration: .01ms !important; animation-delay: .01ms !important; }
+  .letter-intro *, .letter-intro *::before, .letter-intro *::after { animation-duration: .01ms !important; animation-delay: .01ms !important; transition-duration: .01ms !important; }
 }
