@@ -1,14 +1,20 @@
-
-/* Ensure the intro button always receives pointer and keyboard input. */
-.letter-intro,
-.letter-scene,
+/* Decorative photo frames and intro button fixes. */
 .open-letter-button {
+  position: relative;
+  z-index: 20;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
   pointer-events: auto;
 }
 
-.open-letter-button {
-  position: relative;
-  z-index: 10;
-  touch-action: manipulation;
-  -webkit-tap-highlight-color: transparent;
+.letter-intro::before,
+.letter-intro::after,
+.letter-scene::before,
+.letter-scene::after,
+.envelope,
+.letter-paper,
+.envelope-pocket,
+.envelope-flap,
+.envelope-seal {
+  pointer-events: none;
 }

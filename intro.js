@@ -8,14 +8,9 @@ function openLetter() {
   introStarted = true;
   intro.classList.add("is-opening");
 
-  // Playback is initiated directly from the user's tap for Android browser policy.
   if (backgroundMusic) {
     const playResult = backgroundMusic.play();
-    if (playResult && typeof playResult.catch === "function") {
-      playResult.catch(() => {
-        // If playback is blocked, the persistent music button remains available.
-      });
-    }
+    if (playResult && typeof playResult.catch === "function") playResult.catch(() => {});
   }
 
   window.setTimeout(() => {
@@ -25,6 +20,9 @@ function openLetter() {
   }, 2050);
 }
 
+window.openBirthdayLetter = openLetter;
+
 if (openButton) {
+  openButton.addEventListener("pointerup", openLetter, { passive: true });
   openButton.addEventListener("click", openLetter);
 }
