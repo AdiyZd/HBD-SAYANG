@@ -21,6 +21,11 @@ function openBirthdayLetter(event) {
   if (!intro || letterOpened) return;
   letterOpened = true;
   openLetterButton?.setAttribute("disabled", "true");
+
+  // Pastikan posisi halaman selalu di atas saat kartu ucapan dibuka.
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+
   intro.classList.add("is-opening");
   if (backgroundMusic) {
     const playback = backgroundMusic.play();
@@ -30,11 +35,18 @@ function openBirthdayLetter(event) {
     intro.classList.add("is-hidden");
     intro.setAttribute("aria-hidden", "true");
     document.body.classList.remove("intro-locked");
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   }, 2300);
 }
 
 openLetterButton?.addEventListener("pointerup", openBirthdayLetter, { passive: false });
 openLetterButton?.addEventListener("click", openBirthdayLetter);
+
+// Jaga agar reload dan kembali ke halaman ini selalu dimulai dari bagian atas.
+window.addEventListener("pageshow", () => {
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+});
 
 function updateMusicControl() {
   if (!backgroundMusic || !musicControl || !musicIcon) return;
@@ -87,7 +99,7 @@ reactionForm?.addEventListener("submit", async (event) => {
   const lines = ["Hai Sayang! Aku sudah melihat halaman ulang tahunnya 💗"];
   if (selectedReaction) lines.push(`Reaksiku: ${selectedReaction}`);
   if (text) lines.push(`Pesanku: ${text}`);
-  const result = await showAlert({ icon:"success", title:"Kirim reaksimu? 💌", text:"Membuka WhatsApp untuk mengirim reaksi.", showCancelButton:true, confirmButtonText:"Kirim", cancelButtonText:"Nanti dulu", reverseButtons:true });
+  const result = await showAlert({ icon:"success", title:"Kirim reaksimu? 💌", text:"Membuka WhatsApp untuk mengirim reaksi.", showCancelButton:true, confirmButtonText:"Kirim", cancelButtonText:"Nanti saja" });
   if (result.isConfirmed) window.location.assign(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join("\n\n"))}`);
 });
 
