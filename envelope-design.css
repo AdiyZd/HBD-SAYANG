@@ -1,4 +1,3 @@
-/* More polished resting state for the unopened birthday envelope. */
 .envelope {
   isolation: isolate;
   border-radius: 18px;
@@ -26,7 +25,6 @@
   pointer-events: none;
 }
 
-/* Front pocket keeps the hidden letter tucked inside before the button is tapped. */
 .envelope-pocket {
   z-index: 4;
   border-radius: 18px;
