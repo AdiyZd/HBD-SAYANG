@@ -99,7 +99,7 @@ reactionForm?.addEventListener("submit", async (event) => {
   const lines = ["Hai Sayang! Aku sudah melihat halaman ulang tahunnya 💗"];
   if (selectedReaction) lines.push(`Reaksiku: ${selectedReaction}`);
   if (text) lines.push(`Pesanku: ${text}`);
-  const result = await showAlert({ icon:"success", title:"Kirim reaksimu? 💌", text:"Membuka WhatsApp untuk mengirim reaksi.", showCancelButton:true, confirmButtonText:"Kirim", cancelButtonText:"Nanti saja" });
+  const result = await showAlert({ icon:"success", title:"Kirim reaksimu? 💌", text:"Membuka WhatsApp untuk mengirim reaksi.", showCancelButton:true, confirmButtonText:"Kirim", cancelButtonText:"Nanti saja", reverseButtons:true });
   if (result.isConfirmed) window.location.assign(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join("\n\n"))}`);
 });
 
